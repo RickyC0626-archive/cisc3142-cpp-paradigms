@@ -14,8 +14,10 @@ public class Rational
     Rational(int num, int denom)
     {
         if(denom == 0) throw new RationalException("Denominator cannot be 0");
-        this.num = num;
-        this.denom = denom;
+
+        int gcd = gcd(num, denom);
+        this.num = num / gcd;
+        this.denom = denom / gcd;
     }
 
     /**
@@ -86,5 +88,19 @@ public class Rational
     public boolean equals(Rational r)
     {
         return (this.num == r.getNumerator() && this.denom == r.getDenominator());
+    }
+
+    /**
+     * Finds the GCD of num and denom using Euclid's algorithm
+     * <link>https://en.wikipedia.org/wiki/Greatest_common_divisor#Calculation</link>
+     *
+     * @param num the numerator of the Rational
+     * @param denom the denominator of the Rational
+     * @return the greatest common factor
+     */
+    private int gcd(int num, int denom)
+    {
+        if(denom == 0) return num;
+        return gcd(denom, num % denom);
     }
 }

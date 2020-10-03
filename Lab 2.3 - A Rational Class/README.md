@@ -53,13 +53,13 @@ Write a class named `Rational` that provides basic support for rational numbers.
 - [ ] A method `compareTo` that accepts another `Rational` and returns -1, 0, or 1 depending on whether the receiver is less-than, equal-to, or greater-than the argument (this is similar to the `compareTo` method of the `String` class. While normal form makes it easy to test for equality, you might want to give some thought as to how to check for greater-than/less-than.
 - [X] A boolean-returning method named `equals` that accepts a `Rational` argument and returns whether that argument and the receiver are equal.
 - [X] A `toString` method that returns the string representation of rational number, in the form `numerator/denominator`. If the denominator is 0 — i.e., the number if an integer, simply print the numerator.
-- [ ] A private `gcd` method
+- [X] A private `gcd` method
 
 **Notes**
 
 - [X] Use `this` in your overloaded constructors (the first three) to leverage the functionality of initializing the rational from a numerator and denominator.
-- [ ] Calling `gcd`, and reducing your `Rational` in the constructor makes sure that all Rationals you create are reduced from the get-go. (The exception will be if you make in-place changes to a `Rational`), in which case you have to make sure you reduce the result — we'll discuss this in class.
-    - [ ] The way to reduce in the constructor is to call the gcd and then divide both numerator and denominator by the result
+- [X] Calling `gcd`, and reducing your `Rational` in the constructor makes sure that all Rationals you create are reduced from the get-go. (The exception will be if you make in-place changes to a `Rational`), in which case you have to make sure you reduce the result — we'll discuss this in class.
+    - [X] The way to reduce in the constructor is to call the gcd and then divide both numerator and denominator by the result
     - [ ] If this is done in EVERY constructor, the all Rationals will be in reduced normal from the moment they're created
         - [ ] The only possible exception to this is if you do in-place operations by directly manipulating the num and denom (as opposed to leveraging the other immutable (non-in-place) operations and copying the result). In that situation, after manipulating the num and denom, you need to normalize the result (again calling gcd and dividing). If your implementation does this, you may want to write a `normalize` method that does that for you.
 - [ ] Leverage the functionality of the corresponding arithmetic operators (i.e., `add` and `addInPlace`) to maintain semantic consistency. As will be discussed in class you can go in either direction — e.g., first code `addInPlace`, and then use it to implement `add` or vice-versa (C++ uses the former approach; we'll explain why when we get to that point). If you code `add` first, you will need a `copy` method — we will discuss this in class as well.
