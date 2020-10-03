@@ -120,6 +120,16 @@ public class Rational
     }
 
     /**
+     * Subtracts the Rational argument from the receiver in place
+     *
+     * @param r the Rational to be subtracted
+     */
+    public void subInPlace(Rational r)
+    {
+        this.addInPlace(r.negate());
+    }
+
+    /**
      * Adds the Rational argument to the receiver, then returns the sum
      *
      * @param r the Rational to be added
