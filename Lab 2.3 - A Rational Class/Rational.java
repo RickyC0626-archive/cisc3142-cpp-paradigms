@@ -50,4 +50,16 @@ public class Rational
      * @return the denominator of this Rational
      */
     public Integer getDenominator() { return this.denom; }
+
+    /**
+     * Returns the string representation of the Rational.
+     * If denominator is 1 then only numerator is returned.
+     *
+     * @return the string value of the rational number in the form num/denom
+     */
+    public String toString()
+    {
+        if(this.denom == 1) return String.valueOf(this.num);
+        return this.num + "/" + this.denom;
+    }
 }
