@@ -76,4 +76,15 @@ public class Rational
      * @return the inverse of the rational number
      */
     public Rational inverse() { return new Rational(this.denom, this.num); }
+
+    /**
+     * Returns true if the Rational argument and Rational receiver are equal
+     *
+     * @param r Rational to compare to
+     * @return true if equal, false if unequal
+     */
+    public boolean equals(Rational r)
+    {
+        return (this.num == r.getNumerator() && this.denom == r.getDenominator());
+    }
 }
