@@ -15,9 +15,9 @@ public class Rational
     {
         if(denom == 0) throw new RationalException("Denominator cannot be 0");
 
-        int gcd = gcd(num, denom);
-        this.num = num / gcd;
-        this.denom = denom / gcd;
+        this.num = num;
+        this.denom = denom;
+        normalize();
     }
 
     /**
@@ -101,6 +101,32 @@ public class Rational
         int lhs = this.num * r.getDenominator();
         int rhs = this.denom * r.getNumerator();
         return Integer.compare(lhs, rhs);
+    }
+
+    /**
+     * Adds the Rational argument to the receiver in place
+     *
+     * @param r the Rational to be added
+     */
+    public void addInPlace(Rational r)
+    {
+        int commonDenom = this.denom * r.getDenominator();
+        int newNum1 = this.num * r.getDenominator();
+        int newNum2 = r.getNumerator() * this.denom;
+
+        this.num = newNum1 + newNum2;
+        this.denom = commonDenom;
+        normalize();
+    }
+
+    /**
+     * Converts the rational number to simplest form
+     */
+    private void normalize()
+    {
+        int gcd = gcd(this.num, this.denom);
+        this.num /= gcd;
+        this.denom /= gcd;
     }
 
     /**
