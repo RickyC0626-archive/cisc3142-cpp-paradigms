@@ -87,7 +87,7 @@ public class Rational
      */
     public boolean equals(Rational r)
     {
-        return (this.num == r.getNumerator() && this.denom == r.getDenominator());
+        return this.compareTo(r) == 0;
     }
 
     /**
