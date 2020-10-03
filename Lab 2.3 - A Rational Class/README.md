@@ -39,12 +39,12 @@ gcd(a, b):
 
 Write a class named `Rational` that provides basic support for rational numbers. This support consists of the following methods:
 - The following constructors:
-    - A 2-argument constructor that accepts a pair of integers corresponding to the numerator and denominator of the rational number. Thus passing in a numerator of 3 and a denominator of 4 would create an object representing the rational number 3/4. A denominator of 0 causes a RationalException to be thrown
+    - A 2-argument constructor that accepts a pair of integers corresponding to the numerator and denominator of the rational number. Thus passing in a numerator of 3 and a denominator of 4 would create an object representing the rational number 3/4. A denominator of 0 causes a `RationalException` to be thrown
     - A 1-argument constructor that accepts a single integer, which is used as the numerator of the new rational. The denominator should be set to 1. Thus, passing in 3, would result in the (integer-valued) rational 3/1.
     - A 0-argument constructor that initializes the rational to 0.
-    - A copy constructor that accepts a Rational as an argument, which is used to initialize the new rational; i.e., the num of the argument Rational is assigned to the num of the new Rational (the receiver, i.e., the object referred to by this), and similarly for the denom
+    - A copy constructor that accepts a Rational as an argument, which is used to initialize the new rational; i.e., the num of the argument Rational is assigned to the num of the new Rational (the receiver, i.e., the object referred to by `this`), and similarly for the denom
 - `Rational`-returning methods `negate` and `inverse` that return the negation (additive inverse) of the receiver (i.e.,the receiver multiplied by -1), and the inverse/reciprocal of the receiver respectively.
-- Four methods: `add`, `sub`, `mul`, `div` that perform basic arithmetic on rational numbers. These methods take a single Rational parameter corresponding to the second operand (the first operand is the receiver — the Rational operand on whom the method is being invoked) and returns a new Rational containing the result. Thus, if `r1` contains `1/2` and `r2` contains `1/4`, then calling `r1.add(r2)` should return a `Rational` containing `6/8` (see above for how the addition should work).
+- Four methods: `add`, `sub`, `mul`, `div` that perform basic arithmetic on rational numbers. These methods take a single `Rational` parameter corresponding to the second operand (the first operand is the receiver — the `Rational` operand on whom the method is being invoked) and returns a new `Rational` containing the result. Thus, if `r1` contains `1/2` and `r2` contains `1/4`, then calling `r1.add(r2)` should return a `Rational` containing `6/8` (see above for how the addition should work).
 - Four methods `addInPlace`, `subInPlace`, `mulInPlace`, `divInPlace` that perform the same operations as the four above, but the result is placed into the left operand. Thus, if `r1` contains `1/2` and `r2` contains `1/4`, then calling `r1.addInPlace(r2)` results in `r1` containing `6/8`. In other words, `add` corresponds to `+`, while `addInPlace` corresponds to `+=`.
 - A method `inverse` that returns the inverse (reciprocal) of the rational number.
 - A method `negate` that returns the negation (additive inverse — the value multiplied by -1) of the rational number.
@@ -52,13 +52,13 @@ Write a class named `Rational` that provides basic support for rational numbers.
 - A method `getDenominator` that returns the numerator of the rational number.
 - A method `compareTo` that accepts another `Rational` and returns -1, 0, or 1 depending on whether the receiver is less-than, equal-to, or greater-than the argument (this is similar to the `compareTo` method of the `String` class. While normal form makes it easy to test for equality, you might want to give some thought as to how to check for greater-than/less-than.
 - A boolean-returning method named `equals` that accepts a `Rational` argument and returns whether that argument and the receiver are equal.
-- A `toString` method that returns the string representation of rational number, in the form numerator/denominator. If the denominator is 0 — i.e., the number if an integer, simply print the numerator.
+- A `toString` method that returns the string representation of rational number, in the form `numerator/denominator`. If the denominator is 0 — i.e., the number if an integer, simply print the numerator.
 - A private `gcd` method
 
 **Notes**
 
 - Use `this` in your overloaded constructors (the first three) to leverage the functionality of initializing the rational from a numerator and denominator.
-- Calling `gcd`, and reducing your Rational in the constructor makes sure that all Rationals you create are reduced from the get-go. (The exception will be if you make in-place changes to a Rational), in which case you have to make sure you reduce the result — we'll discuss this in class.
+- Calling `gcd`, and reducing your `Rational` in the constructor makes sure that all Rationals you create are reduced from the get-go. (The exception will be if you make in-place changes to a `Rational`), in which case you have to make sure you reduce the result — we'll discuss this in class.
     - The way to reduce in the constructor is to call the gcd and then divide both numerator and denominator by the result
     - If this is done in EVERY constructor, the all Rationals will be in reduced normal from the moment they're created
         - The only possible exception to this is if you do in-place operations by directly manipulating the num and denom (as opposed to leveraging the other immutable (non-in-place) operations and copying the result). In that situation, after manipulating the num and denom, you need to normalize the result (again calling gcd and dividing). If your implementation does this, you may want to write a `normalize` method that does that for you.
