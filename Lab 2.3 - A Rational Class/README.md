@@ -43,11 +43,11 @@ Write a class named `Rational` that provides basic support for rational numbers.
     - [X] A 1-argument constructor that accepts a single integer, which is used as the numerator of the new rational. The denominator should be set to 1. Thus, passing in 3, would result in the (integer-valued) rational 3/1.
     - [X] A 0-argument constructor that initializes the rational to 0.
     - [X] A copy constructor that accepts a Rational as an argument, which is used to initialize the new rational; i.e., the num of the argument Rational is assigned to the num of the new Rational (the receiver, i.e., the object referred to by `this`), and similarly for the denom
-- [ ] `Rational`-returning methods `negate` and `inverse` that return the negation (additive inverse) of the receiver (i.e.,the receiver multiplied by -1), and the inverse/reciprocal of the receiver respectively.
+- [X] `Rational`-returning methods `negate` and `inverse` that return the negation (additive inverse) of the receiver (i.e.,the receiver multiplied by -1), and the inverse/reciprocal of the receiver respectively.
 - [ ] Four methods: `add`, `sub`, `mul`, `div` that perform basic arithmetic on rational numbers. These methods take a single `Rational` parameter corresponding to the second operand (the first operand is the receiver — the `Rational` operand on whom the method is being invoked) and returns a new `Rational` containing the result. Thus, if `r1` contains `1/2` and `r2` contains `1/4`, then calling `r1.add(r2)` should return a `Rational` containing `6/8` (see above for how the addition should work).
 - [ ] Four methods `addInPlace`, `subInPlace`, `mulInPlace`, `divInPlace` that perform the same operations as the four above, but the result is placed into the left operand. Thus, if `r1` contains `1/2` and `r2` contains `1/4`, then calling `r1.addInPlace(r2)` results in `r1` containing `6/8`. In other words, `add` corresponds to `+`, while `addInPlace` corresponds to `+=`.
-- [ ] A method `inverse` that returns the inverse (reciprocal) of the rational number.
-- [ ] A method `negate` that returns the negation (additive inverse — the value multiplied by -1) of the rational number.
+- [X] A method `inverse` that returns the inverse (reciprocal) of the rational number.
+- [X] A method `negate` that returns the negation (additive inverse — the value multiplied by -1) of the rational number.
 - [X] A method `getNumerator` that returns the numerator of the rational number.
 - [X] A method `getDenominator` that returns the numerator of the rational number.
 - [ ] A method `compareTo` that accepts another `Rational` and returns -1, 0, or 1 depending on whether the receiver is less-than, equal-to, or greater-than the argument (this is similar to the `compareTo` method of the `String` class. While normal form makes it easy to test for equality, you might want to give some thought as to how to check for greater-than/less-than.

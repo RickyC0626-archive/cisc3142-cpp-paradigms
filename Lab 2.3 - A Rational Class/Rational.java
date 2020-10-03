@@ -62,4 +62,18 @@ public class Rational
         if(this.denom == 1) return String.valueOf(this.num);
         return this.num + "/" + this.denom;
     }
+
+    /**
+     * Returns the negation of the rational number (multiplied by -1)
+     *
+     * @return the negation of the rational number
+     */
+    public Rational negate() { return new Rational(this.num * -1, this.denom); }
+
+    /**
+     * Returns the inverse (reciprocal) of the rational number
+     *
+     * @return the inverse of the rational number
+     */
+    public Rational inverse() { return new Rational(this.denom, this.num); }
 }
