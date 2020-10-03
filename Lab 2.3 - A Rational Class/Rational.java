@@ -3,7 +3,7 @@
  */
 public class Rational
 {
-    private Integer num, denom;
+    private int num, denom;
 
     /**
      * Creates a new Rational with numerator num and denominator denom
@@ -11,7 +11,7 @@ public class Rational
      * @param num Numerator of the new Rational
      * @param denom Denominator of the new Rational
      */
-    Rational(Integer num, Integer denom)
+    Rational(int num, int denom)
     {
         if(denom == 0) throw new RationalException("Denominator cannot be 0");
         this.num = num;
@@ -23,7 +23,7 @@ public class Rational
      *
      * @param num Numerator of the new Rational
      */
-    Rational(Integer num) { this(num, 1); }
+    Rational(int num) { this(num, 1); }
 
     /**
      * Creates a new Rational with value of 0
@@ -42,14 +42,14 @@ public class Rational
      *
      * @return the numerator of this Rational
      */
-    public Integer getNumerator() { return this.num; }
+    public int getNumerator() { return this.num; }
 
     /**
      * Getter method for Rational denominator
      *
      * @return the denominator of this Rational
      */
-    public Integer getDenominator() { return this.denom; }
+    public int getDenominator() { return this.denom; }
 
     /**
      * Returns the string representation of the Rational.
