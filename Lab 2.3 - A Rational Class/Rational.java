@@ -120,6 +120,19 @@ public class Rational
     }
 
     /**
+     * Adds the Rational argument to the receiver, then returns the sum
+     *
+     * @param r the Rational to be added
+     * @return the sum of the two Rationals
+     */
+    public Rational add(Rational r)
+    {
+        Rational newR = new Rational(this);
+        newR.addInPlace(r);
+        return newR;
+    }
+
+    /**
      * Converts the rational number to simplest form
      */
     private void normalize()
