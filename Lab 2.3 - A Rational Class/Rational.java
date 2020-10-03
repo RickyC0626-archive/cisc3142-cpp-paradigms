@@ -143,6 +143,19 @@ public class Rational
     }
 
     /**
+     * Subtracts the Rational argument from the receiver, then returns the difference
+     *
+     * @param r the Rational to be subtracted
+     * @return the difference of the two Rationals
+     */
+    public Rational sub(Rational r)
+    {
+        Rational newR = new Rational(this);
+        newR.subInPlace(r);
+        return newR;
+    }
+
+    /**
      * Converts the rational number to simplest form
      */
     private void normalize()
