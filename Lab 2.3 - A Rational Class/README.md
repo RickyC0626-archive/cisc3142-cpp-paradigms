@@ -50,7 +50,7 @@ Write a class named `Rational` that provides basic support for rational numbers.
 - [X] A method `negate` that returns the negation (additive inverse — the value multiplied by -1) of the rational number.
 - [X] A method `getNumerator` that returns the numerator of the rational number.
 - [X] A method `getDenominator` that returns the numerator of the rational number.
-- [ ] A method `compareTo` that accepts another `Rational` and returns -1, 0, or 1 depending on whether the receiver is less-than, equal-to, or greater-than the argument (this is similar to the `compareTo` method of the `String` class. While normal form makes it easy to test for equality, you might want to give some thought as to how to check for greater-than/less-than.
+- [X] A method `compareTo` that accepts another `Rational` and returns -1, 0, or 1 depending on whether the receiver is less-than, equal-to, or greater-than the argument (this is similar to the `compareTo` method of the `String` class. While normal form makes it easy to test for equality, you might want to give some thought as to how to check for greater-than/less-than.
 - [X] A boolean-returning method named `equals` that accepts a `Rational` argument and returns whether that argument and the receiver are equal.
 - [X] A `toString` method that returns the string representation of rational number, in the form `numerator/denominator`. If the denominator is 0 — i.e., the number if an integer, simply print the numerator.
 - [X] A private `gcd` method

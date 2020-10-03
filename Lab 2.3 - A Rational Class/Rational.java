@@ -82,12 +82,25 @@ public class Rational
     /**
      * Returns true if the Rational argument and Rational receiver are equal
      *
-     * @param r Rational to compare to
+     * @param r the Rational to be compared
      * @return true if equal, false if unequal
      */
     public boolean equals(Rational r)
     {
         return (this.num == r.getNumerator() && this.denom == r.getDenominator());
+    }
+
+    /**
+     * Compares two Rational objects numerically
+     *
+     * @param r the Rational to be compared
+     * @return -1 if receiver is less than argument, 0 if equal, 1 if greater
+     */
+    public int compareTo(Rational r)
+    {
+        int lhs = this.num * r.getDenominator();
+        int rhs = this.denom * r.getNumerator();
+        return Integer.compare(lhs, rhs);
     }
 
     /**
