@@ -142,6 +142,16 @@ public class Rational
     }
 
     /**
+     * Divides the receiver by the Rational argument in place
+     *
+     * @param r the Rational to divide by
+     */
+    public void divInPlace(Rational r)
+    {
+        this.mulInPlace(r.inverse());
+    }
+
+    /**
      * Adds the Rational argument to the receiver, then returns the sum
      *
      * @param r the Rational to be added
@@ -177,6 +187,19 @@ public class Rational
     {
         Rational newR = new Rational(this);
         newR.mulInPlace(r);
+        return newR;
+    }
+
+    /**
+     * Divides the receiver by the Rational argument, then returns the quotient
+     *
+     * @param r the Rational to divide by
+     * @return the quotient of the two Rationals
+     */
+    public Rational div(Rational r)
+    {
+        Rational newR = new Rational(this);
+        newR.divInPlace(r);
         return newR;
     }
 
