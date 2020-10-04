@@ -130,6 +130,18 @@ public class Rational
     }
 
     /**
+     * Multiplies the Rational argument with the receiver in place
+     *
+     * @param r the Rational to be multiplied
+     */
+    public void mulInPlace(Rational r)
+    {
+        this.num *= r.getNumerator();
+        this.denom *= r.getDenominator();
+        normalize();
+    }
+
+    /**
      * Adds the Rational argument to the receiver, then returns the sum
      *
      * @param r the Rational to be added
@@ -152,6 +164,19 @@ public class Rational
     {
         Rational newR = new Rational(this);
         newR.subInPlace(r);
+        return newR;
+    }
+
+    /**
+     * Multiplies the Rational argument with the receiver, then returns the product
+     *
+     * @param r the Rational to be multiplied
+     * @return the product of the two Rationals
+     */
+    public Rational mul(Rational r)
+    {
+        Rational newR = new Rational(this);
+        newR.mulInPlace(r);
         return newR;
     }
 
