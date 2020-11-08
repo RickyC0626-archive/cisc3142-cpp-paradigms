@@ -1,0 +1,19 @@
+#ifndef RATIONAL_H
+#define RATIONAL_H
+
+#include <iostream>
+
+class Rational
+{
+    public:
+
+    private:
+};
+
+inline std::ostream &operator << (std::ostream &os, const Rational &r)
+{
+    r.print(os);
+    return os;
+}
+
+#endif
