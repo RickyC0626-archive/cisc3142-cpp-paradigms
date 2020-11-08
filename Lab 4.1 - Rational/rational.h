@@ -133,6 +133,10 @@ class Rational
          */
         Rational div(const Rational &r) const;
 
+        /**
+         * Prints the string representation of the Rational. 
+         * If denominator is 1 then only numerator is printed.
+         */
         void print(std::ostream &os) const;
 };
 
