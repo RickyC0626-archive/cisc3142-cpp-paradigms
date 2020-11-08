@@ -11,10 +11,6 @@ class Rational
     private:
         int num, denom;
 
-        /**
-         * Converts the rational number to simplest form
-         */
-        void normalize();
     public:
         /**
          * Creates a new Rational with numerator num and denominator denom. 

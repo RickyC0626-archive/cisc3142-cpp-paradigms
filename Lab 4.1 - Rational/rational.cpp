@@ -2,7 +2,7 @@
 #include "rational_exception.h"
 #include "gcd.h"
 
-void Rational::normalize()
+void normalize(int &num, int &denom)
 {
     int g = gcd(num, denom);
     num /= g;
@@ -13,9 +13,10 @@ Rational::Rational(int num, int denom)
 {
     if(denom == 0) throw RationalException("Denominator cannot be 0");
 
+    normalize(num, denom);
+
     Rational::num = num;
     Rational::denom = denom;
-    normalize();
 }
 
 int Rational::getNumerator() const { return num; }
@@ -41,7 +42,7 @@ Rational &Rational::addInPlace(const Rational &r)
 
     num = newNum1 + newNum2;
     denom = commonDenom;
-    normalize();
+    normalize(num, denom);
     
     return *this;
 }
@@ -52,7 +53,7 @@ Rational &Rational::mulInPlace(const Rational &r)
 {
     num *= r.getNumerator();
     denom *= r.getDenominator();
-    normalize();
+    normalize(num, denom);
 
     return *this;
 }
