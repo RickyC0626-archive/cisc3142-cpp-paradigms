@@ -12,9 +12,9 @@ void load(string fname, vector<Student> &students);
 void write(const vector<Student> &students);
 bool compare(const Student &s1, const Student &s2);	
 
-int main() 
+int main()
 {
-	try 
+	try
     {
 		vector<Student> students;
 
@@ -27,14 +27,14 @@ int main()
 
 		return 0;
 	} 
-    catch(string message) 
+    catch(string message)
     {
 		cout << "*** Exception *** " << message << endl;
 		exit(1);
 	}
 }
 
-void load(string fname, vector<Student> &students) 
+void load(string fname, vector<Student> &students)
 {
 	ifstream ifs(fname.c_str());
 	if (!ifs) throw string("input file " + fname + " not found");
@@ -57,12 +57,12 @@ void load(string fname, vector<Student> &students)
 	ifs.close();
 }
 
-bool compare(const Student &s1, const Student &s2) 
+bool compare(const Student &s1, const Student &s2)
 {
 	return s1.getGPA() > s2.getGPA();
 }
 
-void write(const vector<Student> &students) 
+void write(const vector<Student> &students)
 {
 	for (auto student : students)
 		cout << student;
