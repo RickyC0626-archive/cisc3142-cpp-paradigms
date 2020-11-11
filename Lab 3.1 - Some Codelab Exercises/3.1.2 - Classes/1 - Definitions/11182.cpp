@@ -1,6 +1,6 @@
 /**
- * Write the implementation (.cpp file) of the `Averager` class of
- * the previous exercise. The full specification of the class is:
+ * Write a full class definition for a class named `Averager`, and
+ * containing the following members:
  * - A data member named `sum` of type integer
  * - A data member named `count` of type integer
  * - A constructor with no parameters. The constructor initializes
@@ -20,20 +20,15 @@
  * prior to performing the division).
  */
 
-Averager::Averager()
+class Averager
 {
-	sum = 0;
-	count = 0;
-}
-
-int Averager::getSum() { return sum; }
-
-void Averager::add(int n)
-{
-	sum += n;
-	count++;
-}
-
-int Averager::getCount() { return count; }
-
-double Averager::getAverage() { return (double) sum / (double) count; }
+	private:
+		int sum;
+		int count;
+	public:
+		Averager() { sum = 0; count = 0; }
+		int getSum() { return sum; }
+		void add(int n) { sum += n; count++; }
+		int getCount() { return count; }
+		double getAverage() { return (double) sum / (double) count; }
+};
