@@ -9,7 +9,7 @@
  * functions: the first, `getTotalUnits`, accepts no parameters and returns
  * the total number of units in the building; the second, `isLuxuryBuilding`
  * accepts no parameters and returns true if the building has central air,
- * and elevator and 2 or less units per floor.
+ * an elevator and 2 or less units per floor.
  */
 
 class ApartmentBuilding : Building
