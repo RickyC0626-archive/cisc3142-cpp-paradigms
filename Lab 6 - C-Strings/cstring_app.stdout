@@ -1,0 +1,19 @@
+s1: Hello: (5)
+s2: world: (5)
+strcpy: Hello
+s3: Hello: (5)
+strcat: Hello 
+s3: Hello : (6)
+strcat: Hello world
+Hello world: 11
+Hello world
+Hello world: 11
+'e' found at position 1 in Hello
+'q' not found in Hello
+'l' found at position 2 in Hello world
+'l' last found at position 9 in Hello world
+',' not found in Hello world
+strcmp(s1, s1): 0
+strcmp(s1, s2): -1
+strcmp(s2, s1): 1
+strcmp(s1, s4): -1
